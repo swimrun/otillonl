@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ötillö Rügen — Nederlandse Resultaten</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); color: white; padding: 40px; text-align: center; }
+        .navigation { background: #34495e; padding: 15px 40px; text-align: center; }
+        .nav-link { color: white; text-decoration: none; margin: 0 20px; padding: 10px 20px; border-radius: 5px; transition: background-color 0.3s ease; }
+        .nav-link:hover, .nav-link.active { background-color: #3498db; }
+        .content { padding: 40px; }
+        .race-section { margin-bottom: 50px; }
+        .race-title { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); color: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; text-align: center; }
+        .table-container { overflow-x: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th { background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%); color: white; padding: 15px 12px; text-align: left; font-weight: 600; font-size: 0.9rem; cursor: pointer; position: relative; }
+        td { padding: 12px; border-bottom: 1px solid #ecf0f1; }
+        tr:hover td { background-color: #f8f9fa; }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+        .position { font-weight: 600; text-align: center; }
+        .position.podium { background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white; border-radius: 5px; padding: 5px 10px; }
+        .team-name { font-weight: 600; color: #3498db; }
+        .category { font-size: 0.8rem; padding: 3px 8px; border-radius: 12px; font-weight: 600; }
+        .category.teams, .category.solo, .category.sprint { background: #e3f2fd; color: #1976d2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <a href="https://swimrun.group" style="text-decoration: none;">
+                    <img src="swimrun-huiskamer.webp" alt="SwimRun Huiskamer" style="max-height: 80px; max-width: 200px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                </a>
+            </div>
+            <h1>Ötillö Rügen – Nederlandse Resultaten</h1>
+            <p>Duitsland – september 2025</p>
+        </div>
+        <div class="navigation">
+            <a href="index.html" class="nav-link">🏠 SwimRuns NL 2025</a>
+            <a href="heuvelrug-swimrun.html" class="nav-link">🇳🇱 Heuvelrug</a>
+            <a href="rugen.html" class="nav-link active">🇩🇪 Ötillö Rügen</a>
+            <a href="scilly.html" class="nav-link">🇬🇧 Isles of Scilly</a>
+            <a href="aland.html" class="nav-link">🏝️ Ötillö Åland</a>
+            <a href="rondjeeilanden.html" class="nav-link">🏝️ Het Rondje Eilanden</a>
+            <a href="sure2sure.html" class="nav-link">🇱🇺 Sure2Sure</a>
+            <a href="lauwersoog.html" class="nav-link">🇳🇱 Lauwersoog</a>
+            <a href="stockholm.html" class="nav-link">🏆 WK Stockholm</a>
+        </div>
+        <div class="content">
+            <div class="race-section">
+                <div class="race-title"><h2>🏆 World Series Teams</h2><p>Duitsland - september 2025</p></div>
+                <div class="table-container">
+                    <table id="rugenTeamsTable">
+                        <thead><tr><th class="sortable" data-sort="position">Pos</th><th class="sortable" data-sort="team">Team</th><th class="sortable" data-sort="participants">Deelnemers</th><th class="sortable" data-sort="time">Tijd</th><th class="sortable" data-sort="category">Categorie</th></tr></thead>
+                        <tbody>
+                            <tr><td class="position podium">2</td><td class="team-name">Voorschotense Boys</td><td>Koen Schrama & Skander Taieb</td><td class="time">5:51:31</td><td><span class="category teams">Teams</span></td></tr>
+                            <tr><td class="position podium">3</td><td class="team-name">Spasmus Amfibius</td><td>Joost van Leusden & Ernest Markesteijn</td><td class="time">6:17:41</td><td><span class="category teams">Teams</span></td></tr>
+                            <tr><td class="position">13</td><td class="team-name">Red Hot Chili Steppers</td><td>Richel Driessen & Joeri van der Vooren</td><td class="time">6:36:51</td><td><span class="category teams">Teams</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="race-section">
+                <div class="race-title"><h2>🏃‍♂️ World Series Solo</h2><p>Duitsland - september 2025</p></div>
+                <div class="table-container">
+                    <table id="rugenSoloTable">
+                        <thead><tr><th class="sortable" data-sort="position">Pos</th><th class="sortable" data-sort="name">Naam</th><th class="sortable" data-sort="time">Tijd</th><th class="sortable" data-sort="category">Categorie</th></tr></thead>
+                        <tbody>
+                            <tr><td class="position">6</td><td class="team-name">Abel Hanse</td><td class="time">5:19:12</td><td><span class="category solo">Solo</span></td></tr>
+                            <tr><td class="position">17</td><td class="team-name">Hanc de Bokx</td><td class="time">7:00:54</td><td><span class="category solo">Solo</span></td></tr>
+                            <tr><td class="position">19</td><td class="team-name">Daan Kooiman</td><td class="time">7:07:54</td><td><span class="category solo">Solo</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="race-section">
+                <div class="race-title"><h2>⚡ Sprint Solo (dames)</h2><p>Duitsland - september 2025</p></div>
+                <div class="table-container">
+                    <table id="rugenSprintWomenTable">
+                        <thead><tr><th class="sortable" data-sort="position">Pos</th><th class="sortable" data-sort="name">Naam</th><th class="sortable" data-sort="time">Tijd</th><th class="sortable" data-sort="category">Categorie</th></tr></thead>
+                        <tbody>
+                            <tr><td class="position podium">1</td><td class="team-name">Deborah Wissink</td><td class="time">2:46:52</td><td><span class="category sprint">Sprint Solo</span></td></tr>
+                            <tr><td class="position">31</td><td class="team-name">Isabel van den Eelaart</td><td class="time">4:02:02</td><td><span class="category sprint">Sprint Solo</span></td></tr>
+                            <tr><td class="position">40</td><td class="team-name">Marianne Purmer</td><td class="time">4:23:31</td><td><span class="category sprint">Sprint Solo</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="race-section">
+                <div class="race-title"><h2>⚡ Sprint Solo (heren)</h2><p>Duitsland - september 2025</p></div>
+                <div class="table-container">
+                    <table id="rugenSprintMenTable">
+                        <thead><tr><th class="sortable" data-sort="position">Pos</th><th class="sortable" data-sort="name">Naam</th><th class="sortable" data-sort="time">Tijd</th><th class="sortable" data-sort="category">Categorie</th></tr></thead>
+                        <tbody>
+                            <tr><td class="position podium">2</td><td class="team-name">Gert-Jan de Haas</td><td class="time">3:09:56</td><td><span class="category sprint">Sprint Solo</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        class TableSorter{constructor(t){this.table=document.getElementById(t);if(!this.table)return;this.tbody=this.table.querySelector('tbody');this.headers=this.table.querySelectorAll('th.sortable');this.currentSort={column:null,direction:'asc'};this.init()}init(){this.headers.forEach(h=>{h.addEventListener('click',()=>{const c=h.dataset.sort;this.sort(c)})})}sort(c){const r=Array.from(this.tbody.querySelectorAll('tr'));if(this.currentSort.column===c){this.currentSort.direction=this.currentSort.direction==='asc'?'desc':'asc'}else{this.currentSort.direction='asc'}this.currentSort.column=c;this.headers.forEach(h=>{h.classList.remove('sort-asc','sort-desc');if(h.dataset.sort===c){h.classList.add(`sort-${this.currentSort.direction}`)}});r.sort((a,b)=>{const A=this.getCellValue(a,c);const B=this.getCellValue(b,c);let cmp=0;if(c==='position'){const ap=this.extractPosition(A);const bp=this.extractPosition(B);cmp=ap-bp}else if(c==='time'){if(A==='DNF'&&B==='DNF')return 0; if(A==='DNF')return 1; if(B==='DNF')return -1; cmp=this.timeToSeconds(A)-this.timeToSeconds(B)}else{cmp=A.localeCompare(B,'nl')}return this.currentSort.direction==='asc'?cmp:-cmp});r.forEach(row=>this.tbody.appendChild(row))}getCellValue(row,c){const idx=Array.from(this.headers).findIndex(h=>h.dataset.sort===c);return row.children[idx].textContent.trim()}timeToSeconds(s){const p=s.split(':');return p.length===3?parseInt(p[0])*3600+parseInt(p[1])*60+parseInt(p[2]):p.length===2?parseInt(p[0])*60+parseInt(p[1]):999999}extractPosition(s){if(s==='DNF'||s==='-')return 9999; const m=s.match(/(\d+)/);return m?parseInt(m[1]):9999}}
+        document.addEventListener('DOMContentLoaded',()=>{
+            new TableSorter('rugenTeamsTable');
+            new TableSorter('rugenSoloTable');
+            new TableSorter('rugenSprintWomenTable');
+            new TableSorter('rugenSprintMenTable');
+        });
+    </script>
+</body>
+</html>

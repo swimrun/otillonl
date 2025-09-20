@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henschotermeer - Uitslagen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .navigation {
+            background: #34495e;
+            padding: 15px 40px;
+            text-align: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: #3498db;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        th {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            color: white;
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        th:hover {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            transform: translateY(-2px);
+        }
+
+        th.sortable::after {
+            content: ' ↕';
+            opacity: 0.5;
+            font-size: 0.8rem;
+        }
+
+        th.sort-asc::after {
+            content: ' ↑';
+            opacity: 1;
+            color: #3498db;
+        }
+
+        th.sort-desc::after {
+            content: ' ↓';
+            opacity: 1;
+            color: #e74c3c;
+        }
+
+        td {
+            padding: 18px 15px;
+            border-bottom: 1px solid #ecf0f1;
+            transition: background-color 0.3s ease;
+            color: #333;
+        }
+
+        tr:hover td {
+            background-color: #f8f9fa;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:nth-child(even):hover td {
+            background-color: #e9ecef;
+        }
+
+        .position {
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .position.podium {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .team-name {
+            font-weight: 600;
+            color: #3498db;
+        }
+
+        .time {
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .source-link {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+        }
+
+        .source-link h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .source-link p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .source-link a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .source-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            th, td {
+                padding: 12px 8px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <a href="https://swimrun.group" style="text-decoration: none;">
+                    <img src="swimrun-huiskamer.webp" alt="SwimRun Huiskamer" style="max-height: 80px; max-width: 200px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                </a>
+            </div>
+            <h1>🇳🇱 Heuvelrug</h1>
+            <p>Utrechtse Heuvelrug - 20 september 2025</p>
+            <p style="color: #3498db; font-weight: bold; margin-top: 10px;">🏆 Dutch Swimrun Series</p>
+        </div>
+        
+        <div class="navigation">
+            <a href="index.html" class="nav-link">🏠 SwimRuns NL 2025</a>
+            <a href="heuvelrug-swimrun.html" class="nav-link active">🇳🇱 Heuvelrug</a>
+            <a href="rugen.html" class="nav-link">🇩🇪 Ötillö Rügen</a>
+            <a href="scilly.html" class="nav-link">🇬🇧 Isles of Scilly</a>
+            <a href="aland.html" class="nav-link">🏝️ Ötillö Åland</a>
+            <a href="rondjeeilanden.html" class="nav-link">🏝️ Het Rondje Eilanden</a>
+            <a href="sure2sure.html" class="nav-link">🇱🇺 Sure2Sure</a>
+            <a href="lauwersoog.html" class="nav-link">🇳🇱 Lauwersoog</a>
+            <a href="stockholm.html" class="nav-link">🏆 WK Stockholm</a>
+        </div>
+        
+        <div class="content">
+            <h2 style="color: #2c3e50; font-size: 1.8rem; margin: 30px 0 20px 0; padding-bottom: 10px; border-bottom: 3px solid #3498db;">🏊‍♂️ Swimrun - Uitslag Overall</h2>
+            
+            <div style="overflow-x: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                <table id="heuvelrugTable">
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-sort="position">Pos</th>
+                            <th class="sortable" data-sort="bib">StNr</th>
+                            <th class="sortable" data-sort="name">Naam</th>
+                            <th class="sortable" data-sort="location">Woonplaats</th>
+                            <th class="sortable" data-sort="gender">MV</th>
+                            <th class="sortable" data-sort="category">Cat</th>
+                            <th class="sortable" data-sort="swim">Zwem</th>
+                            <th class="sortable" data-sort="run1">SR_1</th>
+                            <th class="sortable" data-sort="run2">SR_2</th>
+                            <th class="sortable" data-sort="run3">SR_3</th>
+                            <th class="sortable" data-sort="run4">SR_4</th>
+                            <th class="sortable" data-sort="swimrun">SwimRun</th>
+                            <th class="sortable" data-sort="total">Totaal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="position podium">1</td><td>923</td><td class="team-name">Frank van Vliet</td><td>Pijnacker</td><td>M</td><td>MMas</td><td class="time">00:12:22</td><td class="time">21:38</td><td class="time">22:45</td><td class="time">23:26</td><td>-</td><td class="time">01:08:52</td><td class="time">01:20:09</td></tr>
+                        <tr><td class="position podium">2</td><td>937</td><td class="team-name">Joost van Zeil</td><td>Leiden</td><td>M</td><td>MMas</td><td class="time">00:12:45</td><td class="time">22:04</td><td class="time">22:51</td><td class="time">22:44</td><td>-</td><td class="time">01:08:32</td><td class="time">01:20:23</td></tr>
+                        <tr><td class="position podium">3</td><td>933</td><td class="team-name">Jeroen Robbers</td><td>Leiden</td><td>M</td><td>M24</td><td class="time">00:14:26</td><td class="time">22:32</td><td class="time">22:33</td><td class="time">22:56</td><td>-</td><td class="time">01:08:51</td><td class="time">01:22:25</td></tr>
+                        <tr><td class="position">4</td><td>994</td><td class="team-name">Unknown</td><td>-</td><td>M</td><td>-</td><td class="time">00:12:51</td><td class="time">24:07</td><td class="time">24:09</td><td class="time">23:26</td><td>-</td><td class="time">01:12:54</td><td class="time">01:24:31</td></tr>
+                        <tr><td class="position">5</td><td>932</td><td class="team-name">Jeroen Fakkeldij</td><td>Leiden</td><td>M</td><td>MMas</td><td class="time">00:13:40</td><td class="time">23:39</td><td class="time">23:30</td><td class="time">24:01</td><td>-</td><td class="time">01:12:23</td><td class="time">01:24:50</td></tr>
+                        <tr><td class="position">6</td><td>917</td><td class="team-name">Elien van Swieten</td><td>Oosterbeek</td><td>V</td><td>VMas</td><td class="time">00:13:07</td><td class="time">24:24</td><td class="time">24:54</td><td class="time">22:42</td><td>-</td><td class="time">01:13:10</td><td class="time">01:25:05</td></tr>
+                        <tr><td class="position">7</td><td>924</td><td class="team-name">Franziska Tipke</td><td>Breda</td><td>V</td><td>V24</td><td class="time">00:14:40</td><td class="time">23:31</td><td class="time">23:26</td><td class="time">23:39</td><td>-</td><td class="time">01:11:34</td><td class="time">01:25:15</td></tr>
+                        <tr><td class="position">8</td><td>963</td><td class="team-name">Susette Lauwen</td><td>Renkum</td><td>V</td><td>V24</td><td class="time">00:13:55</td><td class="time">24:22</td><td class="time">24:51</td><td class="time">23:27</td><td>-</td><td class="time">01:13:52</td><td class="time">01:26:34</td></tr>
+                        <tr><td class="position">9</td><td>945</td><td class="team-name">Marco Beukenkamp</td><td>Hilversum</td><td>M</td><td>MMas</td><td class="time">00:13:40</td><td class="time">24:27</td><td class="time">24:16</td><td class="time">24:14</td><td>-</td><td class="time">01:13:55</td><td class="time">01:26:36</td></tr>
+                        <tr><td class="position">10</td><td>969</td><td class="team-name">Wim Veldink</td><td>Amersfoort</td><td>M</td><td>MMas</td><td class="time">00:14:46</td><td class="time">24:12</td><td class="time">24:54</td><td class="time">23:10</td><td>-</td><td class="time">01:13:25</td><td class="time">01:27:00</td></tr>
+                        <tr><td class="position">11</td><td>930</td><td class="team-name">Irene Bindenga</td><td>Hilversum</td><td>V</td><td>VMas</td><td class="time">00:13:28</td><td class="time">24:01</td><td class="time">24:35</td><td class="time">25:10</td><td>-</td><td class="time">01:14:48</td><td class="time">01:27:13</td></tr>
+                        <tr><td class="position">12</td><td>926</td><td class="team-name">Gieny van Niejenhuis</td><td>Almere</td><td>V</td><td>VMas</td><td class="time">00:13:45</td><td class="time">24:32</td><td class="time">25:19</td><td class="time">23:49</td><td>-</td><td class="time">01:15:00</td><td class="time">01:27:23</td></tr>
+                        <tr><td class="position">13</td><td>916</td><td class="team-name">Duncan Wouterson</td><td>Amersfoort</td><td>M</td><td>MMas</td><td class="time">00:14:06</td><td class="time">25:12</td><td class="time">25:40</td><td>-</td><td>-</td><td class="time">01:13:04</td><td class="time">01:04:57</td></tr>
+                        <tr><td class="position">14</td><td>949</td><td class="team-name">Marleen Eijkholt</td><td>Leiden</td><td>V</td><td>VMas</td><td class="time">00:14:34</td><td class="time">25:11</td><td class="time">26:00</td><td>-</td><td>-</td><td class="time">01:13:20</td><td class="time">01:05:45</td></tr>
+                        <tr><td class="position">15</td><td>908</td><td class="team-name">Carin van Haren</td><td>Breda</td><td>V</td><td>VMas</td><td class="time">00:14:28</td><td class="time">25:26</td><td class="time">26:22</td><td>-</td><td>-</td><td class="time">01:14:38</td><td class="time">01:06:16</td></tr>
+                        <tr><td class="position">16</td><td>948</td><td class="team-name">Mark Bos</td><td>Breda</td><td>M</td><td>MMas</td><td class="time">00:15:29</td><td class="time">24:41</td><td class="time">26:12</td><td>-</td><td>-</td><td class="time">01:13:38</td><td class="time">01:06:21</td></tr>
+                        <tr><td class="position">17</td><td>968</td><td class="team-name">Wilfred Greup</td><td>Doorn</td><td>M</td><td>MMas</td><td class="time">00:17:09</td><td class="time">24:50</td><td class="time">25:10</td><td>-</td><td>-</td><td class="time">01:08:23</td><td class="time">01:07:08</td></tr>
+                        <tr><td class="position">18</td><td>959</td><td class="team-name">Sander Heikens</td><td>Ede</td><td>M</td><td>MMas</td><td class="time">00:15:10</td><td class="time">26:03</td><td class="time">26:29</td><td>-</td><td>-</td><td class="time">01:16:18</td><td class="time">01:07:40</td></tr>
+                        <tr><td class="position">19</td><td>902</td><td class="team-name">Alie Snijders</td><td>Rotterdam</td><td>V</td><td>VMas</td><td class="time">00:14:58</td><td class="time">26:05</td><td class="time">27:20</td><td>-</td><td>-</td><td class="time">01:16:41</td><td class="time">01:08:22</td></tr>
+                        <tr><td class="position">20</td><td>903</td><td class="team-name">Amarins Gjaltema</td><td>Zwolle</td><td>V</td><td>VMas</td><td class="time">00:14:54</td><td class="time">26:32</td><td class="time">27:12</td><td>-</td><td>-</td><td class="time">01:16:39</td><td class="time">01:08:37</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="source-link">
+                <h3>📊 Bronvermelding</h3>
+                <p>Deze uitslagen zijn afkomstig van <a href="https://nl.mylaps.com/evenementen/uitslagen/2025/sep/20/maarn/S_Tot.html" target="_blank">MYLAPS Event Timing</a> - Heuvelrug Triathlon 2025, Woudenberg, 20-09-2025.</p>
+                <p><strong>Timing & Results:</strong> MYLAPS Event Timing (20-09-2025 13:56:59)</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class TableSorter {
+            constructor(tableId) {
+                this.table = document.getElementById(tableId);
+                if (!this.table) return;
+                
+                this.tbody = this.table.querySelector('tbody');
+                this.headers = this.table.querySelectorAll('th.sortable');
+                this.currentSort = { column: null, direction: 'asc' };
+                
+                this.init();
+            }
+            
+            init() {
+                this.headers.forEach(header => {
+                    header.addEventListener('click', () => {
+                        const column = header.dataset.sort;
+                        this.sort(column);
+                    });
+                });
+            }
+            
+            sort(column) {
+                const rows = Array.from(this.tbody.querySelectorAll('tr'));
+                
+                if (this.currentSort.column === column) {
+                    this.currentSort.direction = this.currentSort.direction === 'asc' ? 'desc' : 'asc';
+                } else {
+                    this.currentSort.direction = 'asc';
+                }
+                
+                this.currentSort.column = column;
+                
+                // Update header classes
+                this.headers.forEach(header => {
+                    header.classList.remove('sort-asc', 'sort-desc');
+                    if (header.dataset.sort === column) {
+                        header.classList.add(`sort-${this.currentSort.direction}`);
+                    }
+                });
+                
+                // Sort rows
+                rows.sort((a, b) => {
+                    const aValue = this.getCellValue(a, column);
+                    const bValue = this.getCellValue(b, column);
+                    
+                    let comparison = 0;
+                    
+                    if (column === 'position') {
+                        const aPos = this.extractPosition(aValue);
+                        const bPos = this.extractPosition(bValue);
+                        comparison = aPos - bPos;
+                    } else if (column === 'time' || column === 'swim' || column === 'run1' || column === 'run2' || column === 'run3' || column === 'run4' || column === 'swimrun' || column === 'total') {
+                        if (aValue === 'DNF' && bValue === 'DNF') return 0;
+                        if (aValue === 'DNF') return 1;
+                        if (bValue === 'DNF') return -1;
+                        comparison = this.timeToSeconds(aValue) - this.timeToSeconds(bValue);
+                    } else {
+                        comparison = aValue.localeCompare(bValue, 'nl');
+                    }
+                    
+                    return this.currentSort.direction === 'asc' ? comparison : -comparison;
+                });
+                
+                // Re-append sorted rows
+                rows.forEach(row => this.tbody.appendChild(row));
+            }
+            
+            getCellValue(row, column) {
+                const columnIndex = Array.from(this.headers).findIndex(header => header.dataset.sort === column);
+                return row.children[columnIndex].textContent.trim();
+            }
+            
+            timeToSeconds(timeString) {
+                if (!timeString || timeString === '-' || timeString === 'DNF') return 999999;
+                
+                const parts = timeString.split(':');
+                if (parts.length === 3) {
+                    return parseInt(parts[0]) * 3600 + parseInt(parts[1]) * 60 + parseInt(parts[2]);
+                } else if (parts.length === 2) {
+                    return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+                }
+                return 999999;
+            }
+            
+            extractPosition(positionString) {
+                if (positionString === 'DNF' || positionString === '-') return 9999;
+                const match = positionString.match(/(\d+)/);
+                return match ? parseInt(match[1]) : 9999;
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            new TableSorter('heuvelrugTable');
+        });
+    </script>
+</body>
+</html>

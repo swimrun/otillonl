@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="nl>
+<head>
+    <meta charset="UTF-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0>
+    <title>Lauwersoog SwimRun - Uitslagen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .navigation {
+            background: #34495e;
+            padding: 15px 40px;
+            text-align: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: #3498db;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        th {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            color: white;
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        td {
+            padding: 18px 15px;
+            border-bottom: 1px solid #ecf0f1;
+            transition: background-color 0.3s ease;
+        }
+
+        tr:hover td {
+            background-color: #f8f9fa;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .position {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .team-name {
+            font-weight: 600;
+            color: #3498db;
+        }
+
+        .time {
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .sheet-title {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin: 30px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            th, td {
+                padding: 12px 8px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container>
+        <div class="header>
+            <h1>🇳🇱 Lauwersoog SwimRun</h1>
+            <p>Nederland - 28 juni 2025</p>
+            <p style="color: #3498db; font-weight: bold; margin-top: 10px;>🏆 Dutch Swimrun Series</p>
+        </div>
+        
+        <div class="navigation>
+            <a href="index.html" class="nav-link>🏠 SwimRuns NL 2025</a>
+            <a href="heuvelrug-swimrun.html" class="nav-link>🇳🇱 Heuvelrug</a>
+            <a href="rugen.html" class="nav-link>🇩🇪 Ötillö Rügen</a>
+            <a href="scilly.html" class="nav-link>🇬🇧 Isles of Scilly</a>
+            <a href="aland.html" class="nav-link>🏝️ Ötillö Åland</a>
+            <a href="rondjeeilanden.html" class="nav-link>🏝️ Het Rondje Eilanden</a>
+            <a href="sure2sure.html" class="nav-link>🇱🇺 Sure2Sure</a>
+            <a href="lauwersoog.html" class="nav-link active>🇳🇱 Lauwersoog</a>
+            <a href="twiske-byu.html" class="nav-link>🇳🇱 't Twiske BYU</a>
+            <a href="leiderdorp.html" class="nav-link>🇳🇱 Leiderdorp</a>
+            <a href="stockholm.html" class="nav-link>🏆 WK Stockholm</a>
+            <a href="circuit.html" class="nav-link>🏆 Circuit</a>
+        </div>
+        
+        <div class="content">
+            <h2 class="sheet-title">10Km Duo</h2>
+            <table style="width: 100%; border-collapse: collapse;" border="1" class="dataframe results-table" id="table-10km-duo">
+  <thead>
+    <tr>
+      <th>Plaats</th>
+      <th>Startnummer</th>
+      <th>Naam</th>
+      <th>Geslacht</th>
+      <th>Bruto Tijd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>74</td>
+      <td>Egbert smit</td>
+      <td>MMANNEN DUO</td>
+      <td>1:55:02</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>44</td>
+      <td>Rik van Bergen</td>
+      <td>MMANNEN DUO</td>
+      <td>2:15:40</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>67</td>
+      <td>Emma Mesman</td>
+      <td>MVROUWEN DUO</td>
+      <td>2:27:58</td>
+    </tr>
+  </tbody>
+            </table>
+            <h2 class="sheet-title">10Km Solo</h2>
+            <table style="width: 100%; border-collapse: collapse;" border="1" class="dataframe results-table" id="table-10km-solo">
+  <thead>
+    <tr>
+      <th>Plaats</th>
+      <th>Startnummer</th>
+      <th>Naam</th>
+      <th>Geslacht</th>
+      <th>Bruto Tijd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DNF</td>
+      <td>53</td>
+      <td>Johan Timmermans</td>
+      <td>M</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>79</td>
+      <td>Quinten Messemaker</td>
+      <td>M</td>
+      <td>1:35:19</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>43</td>
+      <td>Ernst van Bergen</td>
+      <td>M</td>
+      <td>1:43:47</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>58</td>
+      <td>Mark Smid</td>
+      <td>M</td>
+      <td>1:58:15</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>22</td>
+      <td>Dennis Zijp</td>
+      <td>M</td>
+      <td>2:01:35</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>77</td>
+      <td>Richard Bergman</td>
+      <td>M</td>
+      <td>2:04:56</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>76</td>
+      <td>Fred Schoon</td>
+      <td>M</td>
+      <td>2:08:48</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>48</td>
+      <td>Jochem Reintjes</td>
+      <td>M</td>
+      <td>2:14:11</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>32</td>
+      <td>Richard Jongejan</td>
+      <td>M</td>
+      <td>2:14:16</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>85</td>
+      <td>Harmen Slump</td>
+      <td>M</td>
+      <td>2:17:30</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>40</td>
+      <td>Elise Kool</td>
+      <td>V</td>
+      <td>1:43:56</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>65</td>
+      <td>Leonie Kamps</td>
+      <td>V</td>
+      <td>2:01:35</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>61</td>
+      <td>Tirza Schuerhoff</td>
+      <td>V</td>
+      <td>2:06:01</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>72</td>
+      <td>Sieglinde Absillis</td>
+      <td>V</td>
+      <td>2:14:43</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>26</td>
+      <td>Nienke Hendriks-Tuininga</td>
+      <td>V</td>
+      <td>2:17:00</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>4</td>
+      <td>Ingrid Prins</td>
+      <td>V</td>
+      <td>2:19:23</td>
+    </tr>
+  </tbody>
+            </table>
+            <h2 class="sheet-title">10Mijl Duo</h2>
+            <table style="width: 100%; border-collapse: collapse;" border="1" class="dataframe results-table" id="table-10mijl-duo">
+  <thead>
+    <tr>
+      <th>Plaats</th>
+      <th>Startnummer</th>
+      <th>Naam</th>
+      <th>Geslacht</th>
+      <th>Bruto Tijd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>10</td>
+      <td>Sander van Haren</td>
+      <td>MMANNEN DUO</td>
+      <td>2:20:58</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>17</td>
+      <td>Jan Willem Jansen Venneboer</td>
+      <td>MMANNEN DUO</td>
+      <td>2:36:28</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>64</td>
+      <td>Gertjan Winten</td>
+      <td>MMIX DUO</td>
+      <td>1:59:24</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>37</td>
+      <td>Dennis van de Worp</td>
+      <td>MMIX DUO</td>
+      <td>2:00:03</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>55</td>
+      <td>Esther Mondt</td>
+      <td>MMIX DUO</td>
+      <td>2:26:33</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>34</td>
+      <td>Richard Hill</td>
+      <td>MMIX DUO</td>
+      <td>2:31:36</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>11</td>
+      <td>Annet van der Veen</td>
+      <td>MMIX DUO</td>
+      <td>2:52:19</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>19</td>
+      <td>Jacqueline Venema</td>
+      <td>MVROUWEN DUO</td>
+      <td>2:56:52</td>
+    </tr>
+  </tbody>
+            </table>
+            <h2 class="sheet-title">10Mijl Solo</h2>
+            <table style="width: 100%; border-collapse: collapse;" border="1" class="dataframe results-table" id="table-10mijl-solo">
+  <thead>
+    <tr>
+      <th>Plaats</th>
+      <th>Startnummer</th>
+      <th>Naam</th>
+      <th>Geslacht</th>
+      <th>Bruto Tijd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>84</td>
+      <td>Erik Schroder</td>
+      <td>M</td>
+      <td>1:44:12</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>68</td>
+      <td>Emrys Halbertsma</td>
+      <td>M</td>
+      <td>1:45:36</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>70</td>
+      <td>Jurn Walstra</td>
+      <td>M</td>
+      <td>1:47:23</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>42</td>
+      <td>Michel Wigbers</td>
+      <td>M</td>
+      <td>1:49:09</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>83</td>
+      <td>Dennis Schutten</td>
+      <td>M</td>
+      <td>1:49:09</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>73</td>
+      <td>Andre Gorter</td>
+      <td>M</td>
+      <td>2:01:25</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>69</td>
+      <td>Roel van der Aart</td>
+      <td>M</td>
+      <td>2:05:55</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>81</td>
+      <td>Henri Klijn</td>
+      <td>M</td>
+      <td>2:10:39</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>23</td>
+      <td>Marc Prust</td>
+      <td>M</td>
+      <td>2:13:18</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>54</td>
+      <td>Alex van der Ree</td>
+      <td>M</td>
+      <td>2:21:24</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>27</td>
+      <td>Alex Medendorp</td>
+      <td>M</td>
+      <td>2:21:49</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>28</td>
+      <td>Arno Krijgsman</td>
+      <td>M</td>
+      <td>2:22:13</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>87</td>
+      <td>Bas Cooijman</td>
+      <td>M</td>
+      <td>2:40:10</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>75</td>
+      <td>Johan de Jong</td>
+      <td>M</td>
+      <td>2:41:23</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>25</td>
+      <td>Rene Ruhland</td>
+      <td>M</td>
+      <td>2:51:44</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>9</td>
+      <td>Willem van Leeuwen</td>
+      <td>M</td>
+      <td>2:52:12</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>14</td>
+      <td>Bernie Beikes</td>
+      <td>M</td>
+      <td>2:53:01</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>3</td>
+      <td>Lizet Wolters</td>
+      <td>V</td>
+      <td>2:10:05</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>29</td>
+      <td>Jolien Tol</td>
+      <td>V</td>
+      <td>2:10:29</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>33</td>
+      <td>Yvonne van der Knaap</td>
+      <td>V</td>
+      <td>2:23:46</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>6</td>
+      <td>Maaike Heidinga</td>
+      <td>V</td>
+      <td>2:32:47</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>52</td>
+      <td>Monique van der Meer</td>
+      <td>V</td>
+      <td>2:37:52</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>57</td>
+      <td>Maartje de Sonnaville</td>
+      <td>V</td>
+      <td>2:45:25</td>
+    </tr>
+  </tbody>
+            </table>
+            <h2 class="sheet-title">15Mijl Duo</h2>
+            <table style="width: 100%; border-collapse: collapse;" border="1" class="dataframe results-table" id="table-15mijl-duo">
+  <thead>
+    <tr>
+      <th>Plaats</th>
+      <th>Startnummer</th>
+      <th>Naam</th>
+      <th>Geslacht</th>
+      <th>Bruto Tijd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>78</td>
+      <td>Selma Dag</td>
+      <td>FMIX DUO</td>
+      <td>4:57:01</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>31</td>
+      <td>Jeroena-429 Leuverink</td>
+      <td>MMANNEN DUO</td>
+      <td>3:20:46</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>62</td>
+      <td>Tom Van Breussegem</td>
+      <td>MMANNEN DUO</td>
+      <td>4:07:16</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>66</td>
+      <td>Wouter Daandels</td>
+      <td>MMANNEN DUO</td>
+      <td>4:15:54</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>35</td>
+      <td>Frank van Vliet</td>
+      <td>MMANNEN DUO</td>
+      <td>4:17:05</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>47</td>
+      <td>Dirk Boelens</td>
+      <td>MMIX DUO</td>
+      <td>3:58:18</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>Bart Winter</td>
+      <td>MMIX DUO</td>
+      <td>4:22:28</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>1</td>
+      <td>Dagne Overgoor-Swarte</td>
+      <td>MMIX DUO</td>
+      <td>4:37:10</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>49</td>
+      <td>Cindy Brusse</td>
+      <td>MVROUWEN DUO</td>
+      <td>3:40:54</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>38</td>
+      <td>Linda Hofman</td>
+      <td>MVROUWEN DUO</td>
+      <td>4:26:26</td>
+    </tr>
+  </tbody>
+            </table>
+            <h2 class="sheet-title">15Mijl Solo</h2>
+            <table style="width: 100%; border-collapse: collapse;" border="1" class="dataframe results-table" id="table-15mijl-solo">
+  <thead>
+    <tr>
+      <th>Plaats</th>
+      <th>Startnummer</th>
+      <th>Naam</th>
+      <th>Geslacht</th>
+      <th>Bruto Tijd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>80</td>
+      <td>Sander Oosterhof</td>
+      <td>M</td>
+      <td>3:13:45</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>86</td>
+      <td>Arnoud Hageman</td>
+      <td>M</td>
+      <td>3:33:51</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>39</td>
+      <td>Roelof uit Beijerse</td>
+      <td>M</td>
+      <td>3:38:27</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>63</td>
+      <td>Jannes Kamphuis</td>
+      <td>M</td>
+      <td>3:41:48</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>16</td>
+      <td>Patrick Keizer</td>
+      <td>M</td>
+      <td>3:51:48</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>46</td>
+      <td>Peter Meijer</td>
+      <td>M</td>
+      <td>3:52:50</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>2</td>
+      <td>Michiela-456 van der Wilt</td>
+      <td>M</td>
+      <td>4:05:07</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>20</td>
+      <td>Jeroen van den Heuvel Rijnders</td>
+      <td>M</td>
+      <td>4:06:26</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>30</td>
+      <td>Auke Spans</td>
+      <td>M</td>
+      <td>4:09:16</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>41</td>
+      <td>Auke Douma</td>
+      <td>M</td>
+      <td>4:14:11</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>50001</td>
+      <td>N.N. 50001</td>
+      <td>M</td>
+      <td>4:44:44</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>71</td>
+      <td>Els Meijer</td>
+      <td>V</td>
+      <td>4:24:19</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>56</td>
+      <td>Marieke de Sonnaville</td>
+      <td>V</td>
+      <td>4:32:18</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>50</td>
+      <td>Maaike van Vliet</td>
+      <td>V</td>
+      <td>5:00:45</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+    </div>
+</body>
+</html>

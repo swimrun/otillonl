@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nederlandse Swimrun Circuit - Stand</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .navigation {
+            background: #34495e;
+            padding: 15px 40px;
+            text-align: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: #3498db;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .circuit-info {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #3498db;
+        }
+
+        .circuit-info h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .circuit-info p {
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .points-system {
+            background: #e8f5e8;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .points-system h3 {
+            color: #27ae60;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .points-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .point-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .point-position {
+            font-weight: 600;
+            color: #27ae60;
+            font-size: 1.1rem;
+        }
+
+        .point-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-top: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        th {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            color: white;
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        td {
+            padding: 18px 15px;
+            border-bottom: 1px solid #ecf0f1;
+            transition: background-color 0.3s ease;
+            color: #333;
+        }
+
+        tr:hover td {
+            background-color: #f8f9fa;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .position {
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .position.podium {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .total-points {
+            font-weight: 700;
+            color: #3498db;
+            font-size: 1.1rem;
+        }
+
+        .race-points {
+            font-weight: 600;
+            color: #27ae60;
+        }
+
+        .events-section {
+            margin-top: 40px;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid #3498db;
+        }
+
+        .event-card h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .event-card p {
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            th, td {
+                padding: 12px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .points-table {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <a href="https://swimrun.group" style="text-decoration: none;">
+                    <img src="swimrun-huiskamer.webp" alt="SwimRun Huiskamer" style="max-height: 80px; max-width: 200px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                </a>
+            </div>
+            <h1>🏆 Nederlandse Swimrun Circuit</h1>
+            <p>Seizoen 2025 - Stand & Puntentelling</p>
+            <p style="color: #3498db; font-weight: bold; margin-top: 10px;">🏆 Dutch Swimrun Series</p>
+        </div>
+        
+        <div class="navigation">
+            <a href="index.html" class="nav-link">🏠 SwimRuns NL 2025</a>
+            <a href="heuvelrug-swimrun.html" class="nav-link">🇳🇱 Heuvelrug</a>
+            <a href="rugen.html" class="nav-link">🇩🇪 Ötillö Rügen</a>
+            <a href="scilly.html" class="nav-link">🇬🇧 Isles of Scilly</a>
+            <a href="aland.html" class="nav-link">🏝️ Ötillö Åland</a>
+            <a href="rondjeeilanden.html" class="nav-link">🏝️ Het Rondje Eilanden</a>
+            <a href="sure2sure.html" class="nav-link">🇱🇺 Sure2Sure</a>
+            <a href="twiske-byu.html" class="nav-link">🇳🇱 't Twiske BYU</a>
+            <a href="lauwersoog.html" class="nav-link">🇳🇱 Lauwersoog</a>
+            <a href="leiderdorp.html" class="nav-link">🇳🇱 Leiderdorp</a>
+            <a href="stockholm.html" class="nav-link">🏆 WK Stockholm</a>
+            <a href="circuit.html" class="nav-link active">🏆 Circuit</a>
+        </div>
+        
+        <div class="content">
+            <div class="circuit-info">
+                <h3>🏊‍♂️ Over het Nederlandse Swimrun Circuit</h3>
+                <p><strong>⚠️ CONCEPT:</strong> Het Nederlandse Swimrun Circuit is een conceptuele ranking gebaseerd op bestaande uitslagen van Nederlandse swimrun evenementen.</p>
+                <p><strong>Doel:</strong> Een overzicht creëren van Nederlandse swimrunners die deelnemen aan meerdere evenementen in Nederland.</p>
+                <p><strong>Deelnemende evenementen:</strong> HRE (Het Rondje Eilanden), 't Twiske BYU (Backyard Ultra), UHTT (Henschotermeer), SwimRun Leiderdorp, en Lauwersoog SwimRun.</p>
+                <p><strong>Status:</strong> Dit is geen officieel circuit - het combineert uitslagen van verschillende organisaties voor een overzichtelijke ranking.</p>
+            </div>
+
+            <div class="points-system">
+                <h3>📊 Rankingsysteem</h3>
+                <p>Het rankingsysteem is gebaseerd op finishplaatsen - hoe lager de score, hoe beter:</p>
+                <div class="points-table">
+                    <table>
+                        <thead>
+                            <tr><th>Voorwaarde</th><th>Berekening</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Alle 4 evenementen</td><td>Som van 3 beste resultaten (slechtste wordt geschrapt)</td></tr>
+                            <tr><td>3 evenementen</td><td>Som van alle 3 resultaten</td></tr>
+                            <tr><td>2 evenementen</td><td>Som van beide resultaten</td></tr>
+                            <tr><td>1 evenement</td><td>Finishplaats van dat evenement</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                    <h4>🏆 Ranking Regels:</h4>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li><strong>Minimum deelname:</strong> 3 van de 4 evenementen</li>
+                        <li><strong>4 evenementen:</strong> Slechtste resultaat wordt geschrapt</li>
+                        <li><strong>3 evenementen:</strong> Alle resultaten tellen mee</li>
+                        <li><strong>2 evenementen:</strong> Komen onder de 3-evenementen groep</li>
+                        <li><strong>1 evenement:</strong> Komen onder de 2-evenementen groep</li>
+                        <li><strong>Laagste score wint:</strong> 1e plaats = 1 punt, 2e plaats = 2 punten, etc.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 style="color: #2c3e50; font-size: 1.8rem; margin: 30px 0 20px 0; padding-bottom: 10px; border-bottom: 3px solid #3498db;">🏆 Tussenstand 2025 (Na Heuvelrug)</h2>
+            <p style="color: #7f8c8d; margin-bottom: 20px; font-style: italic;">Eindstand volgt na SwimRun Leiderdorp</p>
+            
+            <div style="overflow-x: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Naam</th>
+                            <th>HRE<br>(18 juli)</th>
+                            <th>'t Twiske BYU<br>(28 juni)</th>
+                            <th>Lauwersoog<br>(28 juni)</th>
+                            <th>UHTT<br>(20 sept)</th>
+                            <th>Leiderdorp<br>(28 sept)</th>
+                            <th>Score</th>
+                            <th>Deelnames</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="position podium">1</td>
+                            <td class="team-name">Raf Ariëns</td>
+                            <td class="race-points">3</td>
+                            <td class="race-points">1</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="total-points">4</td>
+                            <td class="race-points">2</td>
+                        </tr>
+                        <tr>
+                            <td class="position podium">2</td>
+                            <td class="team-name">Sander Berk</td>
+                            <td class="race-points">4</td>
+                            <td class="race-points">2</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="total-points">6</td>
+                            <td class="race-points">2</td>
+                        </tr>
+                        <tr>
+                            <td class="position podium">3</td>
+                            <td class="team-name">Frank van Vliet</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">1</td>
+                            <td class="race-points">-</td>
+                            <td class="total-points">1</td>
+                            <td class="race-points">1</td>
+                        </tr>
+                        <tr>
+                            <td class="position">4</td>
+                            <td class="team-name">Joost van Zeil</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">2</td>
+                            <td class="race-points">-</td>
+                            <td class="total-points">2</td>
+                            <td class="race-points">1</td>
+                        </tr>
+                        <tr>
+                            <td class="position">5</td>
+                            <td class="team-name">Jeroen Robbers</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">3</td>
+                            <td class="race-points">-</td>
+                            <td class="total-points">3</td>
+                            <td class="race-points">1</td>
+                        </tr>
+                        <tr>
+                            <td class="position">6</td>
+                            <td class="team-name">Jeroen Fakkeldij</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">5</td>
+                            <td class="race-points">-</td>
+                            <td class="total-points">5</td>
+                            <td class="race-points">1</td>
+                        </tr>
+                        <tr>
+                            <td class="position">7</td>
+                            <td class="team-name">Elien van Swieten</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">6</td>
+                            <td class="race-points">-</td>
+                            <td class="total-points">6</td>
+                            <td class="race-points">1</td>
+                        </tr>
+                        <tr>
+                            <td class="position">8</td>
+                            <td class="team-name">Franziska Tipke</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">7</td>
+                            <td class="race-points">-</td>
+                            <td class="total-points">7</td>
+                            <td class="race-points">1</td>
+                        </tr>
+                        <tr>
+                            <td class="position">9</td>
+                            <td class="team-name">Susette Lauwen</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">8</td>
+                            <td class="race-points">-</td>
+                            <td class="total-points">8</td>
+                            <td class="race-points">1</td>
+                        </tr>
+                        <tr>
+                            <td class="position">10</td>
+                            <td class="team-name">Marco Beukenkamp</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">-</td>
+                            <td class="race-points">9</td>
+                            <td class="race-points">-</td>
+                            <td class="total-points">9</td>
+                            <td class="race-points">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="events-section">
+                <h2 style="color: #2c3e50; font-size: 1.8rem; margin: 30px 0 20px 0; padding-bottom: 10px; border-bottom: 3px solid #3498db;">🏊‍♂️ Deelnemende Evenementen</h2>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <p><strong>Circuit evenementen 2025:</strong></p>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li>🇳🇱 't Twiske BYU - 28 juni</li>
+                        <li>🇳🇱 Lauwersoog SwimRun - 28 juni</li>
+                        <li>🏝️ Het Rondje Eilanden (HRE) - 18 juli</li>
+                        <li>🇳🇱 Utrechtse Heuvelrug Triathlon (UHTT) - 20 september</li>
+                        <li>🇳🇱 SwimRun Leiderdorp - 28 september</li>
+                    </ul>
+                    <p style="margin-top: 15px; font-style: italic; color: #7f8c8d;">Voor uitgebreide informatie over elk evenement, zie de individuele evenementpagina's.</p>
+                </div>
+            </div>
+
+            <div class="circuit-info">
+                <h3>📋 Conceptuele Ranking Regels 2025</h3>
+                <p><strong>⚠️ DISCLAIMER:</strong> Dit is een conceptuele ranking gebaseerd op bestaande uitslagen. Er is geen officiële organisatie achter dit circuit.</p>
+                <p><strong>Deelname:</strong> Automatisch gebaseerd op deelname aan de genoemde Nederlandse swimrun evenementen.</p>
+                <p><strong>Rankingsysteem:</strong> Gebaseerd op finishplaatsen - som van resultaten, laagste score wint.</p>
+                <p><strong>Seizoen 2025:</strong> Tussenstand na UHTT, eindstand na SwimRun Leiderdorp.</p>
+                <p><strong>Doel:</strong> Overzichtelijke ranking van Nederlandse swimrunners die deelnemen aan meerdere evenementen.</p>
+            </div>
+
+            <div class="circuit-info" style="background: #fff3cd; border-left-color: #ffc107;">
+                <h3>🚀 Plannen voor 2026</h3>
+                <p><strong>Doel:</strong> Na evaluatie van 2025 kijken naar mogelijkheden voor een meer officieel Nederlands Swimrun Circuit.</p>
+                <p><strong>Evaluatie:</strong> Eind 2025 wordt gekeken naar deelname, interesse en haalbaarheid van een officieel circuit.</p>
+                <p><strong>Mogelijke partners:</strong> Samenwerking met bestaande organisatoren van Nederlandse swimrun evenementen.</p>
+                <p><strong>Timeline:</strong> Beslissing over 2026 circuit in Q4 2025.</p>
+            </div>
+
+            <div class="circuit-info" style="background: #d1ecf1; border-left-color: #17a2b8;">
+                <h3>📊 Nederlandse SwimRunners 2025</h3>
+                <p><strong>Overzicht:</strong> Na SwimRun Leiderdorp wordt een complete lijst gepubliceerd van alle Nederlandse swimrunners die hebben deelgenomen aan evenementen in 2025.</p>
+                <p><strong>Inclusief:</strong> Deelname aan HRE, Lauwersoog, UHTT, en Leiderdorp evenementen.</p>
+                <p><strong>Statistieken:</strong> Aantal deelnemers per evenement, cross-participatie, en algemene trends.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ötillö WCH Stockholm – Nederlandse Resultaten</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); color: white; padding: 40px; text-align: center; }
+        .navigation { background: #34495e; padding: 15px 40px; text-align: center; }
+        .nav-link { color: white; text-decoration: none; margin: 0 20px; padding: 10px 20px; border-radius: 5px; transition: background-color 0.3s ease; }
+        .nav-link:hover, .nav-link.active { background-color: #3498db; }
+        .table-container { padding: 40px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+        th { background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%); color: white; padding: 20px 15px; text-align: left; font-weight: 600; font-size: 1rem; cursor: pointer; position: relative; }
+        td { padding: 18px 15px; border-bottom: 1px solid #ecf0f1; }
+        tr:hover td { background-color: #f8f9fa; }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+        .year { font-weight: 600; color: #2c3e50; }
+        .team-name { font-weight: 600; color: #3498db; }
+        .position { font-weight: 600; }
+        .position.mix, .position.men { color: #3498db; }
+        .time { font-family: 'Courier New', monospace; font-weight: 600; color: #2c3e50; }
+        .dnf { color: #e74c3c; font-weight: 600; }
+        .stats { background: #f8f9fa; padding: 30px; margin-top: 20px; border-radius: 10px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .stat-item { text-align: center; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .stat-number { font-size: 2rem; font-weight: 700; color: #3498db; display: block; }
+        .stat-label { color: #7f8c8d; font-size: 0.9rem; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <a href="https://swimrun.group" style="text-decoration: none;">
+                    <img src="swimrun-huiskamer.webp" alt="SwimRun Huiskamer" style="max-height: 80px; max-width: 200px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                </a>
+            </div>
+            <h1>Ötillö, The Swimrun World Championship</h1>
+            <p>Stockholm, Zweden – Nederlandse resultaten sinds 2006</p>
+        </div>
+        <div class="navigation">
+            <a href="index.html" class="nav-link">SwimRuns NL 2025</a>
+            <a href="results.html" class="nav-link">Overzicht</a>
+            <a href="otillo.html" class="nav-link active">Ötillö WCH</a>
+            <a href="rugen.html" class="nav-link">Rügen</a>
+            <a href="scilly.html" class="nav-link">Isles of Scilly</a>
+            <a href="sure2sure.html" class="nav-link">Sure2Sure</a>
+            <a href="rondjeeilanden.html" class="nav-link">Het Rondje Eilanden</a>
+            <a href="https://swimrun.group" class="nav-link">🏠 Hoofdsite</a>
+        </div>
+        <div class="table-container">
+            <!-- Table content copied from current index.html -->
+            <table id="otilloTable">
+                <thead>
+                    <tr>
+                        <th class="sortable" data-sort="year">Jaar</th>
+                        <th class="sortable" data-sort="team">Team</th>
+                        <th class="sortable" data-sort="participants">Deelnemers</th>
+                        <th class="sortable" data-sort="position">Positie</th>
+                        <th class="sortable" data-sort="time">Eindtijd</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="year">2017</td><td class="team-name">Say No To Doping!</td><td>Thomas Schreven & Jasmina Glad-Schreven (FIN)</td><td class="position mix">DNF</td><td class="time dnf">DNF</td></tr>
+                    <tr><td class="year">2018</td><td class="team-name">Say No To Doping!</td><td>Thomas Schreven & Jasmina Glad-Schreven (FIN)</td><td class="position mix">3/16 mix</td><td class="time">08:36:29</td></tr>
+                    <tr><td class="year">2019</td><td class="team-name">Say No To Doping!</td><td>Thomas Schreven & Jasmina Glad-Schreven (FIN)</td><td class="position mix">2/12 mix</td><td class="time">08:47:31</td></tr>
+                    <tr><td class="year">2021</td><td class="team-name">Team ErNie</td><td>Erik Schröder & Niels Grote Beverborg</td><td class="position men">34/59 man</td><td class="time">10:09:43</td></tr>
+                    <tr><td class="year">2022</td><td class="team-name">Team Verderøp</td><td>Pieter Wolbers & Jetse Scholma</td><td class="position men">74/124 man</td><td class="time">12:15:42</td></tr>
+                    <tr><td class="year">2024</td><td class="team-name">Entre Nous</td><td>Pommeline Warringa & Benoît Lemaire (FRA)</td><td class="position mix">25/70 mix</td><td class="time">11:46:13</td></tr>
+                    <tr><td class="year">2025</td><td class="team-name">Team ErNie</td><td>Erik Schröder & Niels Grote Beverborg</td><td class="position men">28/77 man</td><td class="time">09:44:09</td></tr>
+                    <tr><td class="year">2025</td><td class="team-name">Team Groot Rondje Eilanden</td><td>Sander Berk & Bart van der Wal</td><td class="position men">43/77 man</td><td class="time">10:33:58</td></tr>
+                </tbody>
+            </table>
+            <div class="stats">
+                <div class="stat-item"><span class="stat-number">8</span><div class="stat-label">Deelnames</div></div>
+                <div class="stat-item"><span class="stat-number">2</span><div class="stat-label">Podiumplaatsen</div></div>
+                <div class="stat-item"><span class="stat-number">08:36:29</span><div class="stat-label">Snelste Nederlander</div></div>
+                <div class="stat-item"><span class="stat-number">09:44:09</span><div class="stat-label">Snelste NL duo</div></div>
+            </div>
+            <div style="background:#f8f9fa;padding:20px;border-radius:10px;margin-top:30px;border-left:4px solid #3498db;">
+                <h3 style="color:#2c3e50;margin-bottom:15px;font-size:1.1rem;">📊 Bronvermelding</h3>
+                <p style="color:#7f8c8d;font-size:0.9rem;margin:0;">
+                    <strong>WK Stockholm resultaten:</strong>
+                    <a href="https://otilloswimrun.com/races/otillo-wch-sweden-results/" target="_blank" style="color:#3498db;text-decoration:none;">Ötillö World Championship Results</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        class TableSorter{constructor(t){this.table=document.getElementById(t);this.tbody=this.table.querySelector('tbody');this.headers=this.table.querySelectorAll('th.sortable');this.currentSort={column:null,direction:'asc'};this.init()}init(){this.headers.forEach(h=>{h.addEventListener('click',()=>{const c=h.dataset.sort;this.sort(c)})})}sort(c){const rows=Array.from(this.tbody.querySelectorAll('tr'));if(this.currentSort.column===c){this.currentSort.direction=this.currentSort.direction==='asc'?'desc':'asc'}else{this.currentSort.direction='asc'}this.currentSort.column=c;this.headers.forEach(h=>{h.classList.remove('sort-asc','sort-desc');if(h.dataset.sort===c){h.classList.add(`sort-${this.currentSort.direction}`)}});rows.sort((a,b)=>{const A=this.getCellValue(a,c);const B=this.getCellValue(b,c);let cmp=0;if(c==='year'){cmp=parseInt(A)-parseInt(B)}else if(c==='time'){if(A==='DNF'&&B==='DNF')return 0; if(A==='DNF')return 1; if(B==='DNF')return -1; cmp=this.timeToSeconds(A)-this.timeToSeconds(B)}else if(c==='position'){const ap=this.extractPosition(A);const bp=this.extractPosition(B);cmp=ap-bp}else{cmp=A.localeCompare(B,'nl')}return this.currentSort.direction==='asc'?cmp:-cmp});rows.forEach(r=>this.tbody.appendChild(r))}getCellValue(r,c){const i=Array.from(this.headers).findIndex(h=>h.dataset.sort===c);return r.children[i].textContent.trim()}timeToSeconds(s){const p=s.split(':');return parseInt(p[0])*3600+parseInt(p[1])*60+parseInt(p[2])}extractPosition(s){if(s==='DNF')return 9999; const m=s.match(/(\d+)\//);return m?parseInt(m[1]):9999}}
+        document.addEventListener('DOMContentLoaded',()=>{ new TableSorter('otilloTable'); });
+    </script>
+</body>
+</html>
